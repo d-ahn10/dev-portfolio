@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David's Portfolio</title>
+    <meta name="description" content="Welcome to my portfolio site. Enter the password to continue to the main page.">
+    <title>Portfolio Access</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to David's Portfolio</h1>
-        <p class="subtitle">Developer • Designer • Problem Solver</p>
-    </header>
-
-    <main>
-        <section>
-            <p>Hello, and welcome to my development portfolio. This is where I showcase projects, share ideas, and experiment with new technologies. More updates coming soon.</p>
+    <main class="gate">
+        <section class="card">
+            <h1>Welcome to my portfolio site</h1>
+            <p class="subtitle">Work in progress. Enter the password to view the full portfolio.</p>
+            <form id="gate-form" class="form">
+                <label for="password">Password</label>
+                <div class="input-row">
+                    <input id="password" name="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
+                    <button id="enter-button" type="submit">Enter</button>
+                </div>
+                <p id="error-message" class="error" aria-live="polite"></p>
+            </form>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 David Ahn All rights reserved.</p>
-    </footer>
+    <script src="/assets/js/gate.js"></script>
 </body>
 </html>
