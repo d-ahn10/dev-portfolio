@@ -1,27 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to my portfolio site. Enter the password to continue to the main page.">
-    <title>Portfolio Access</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Concise single-page portfolio template for a software engineer.">
+  <title>Engineer Portfolio Template</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="gate">
-        <section class="card">
-            <h1>Welcome to my portfolio site</h1>
-            <p class="subtitle">Work in progress. Enter the password to view the full portfolio.</p>
-            <form id="gate-form" class="form">
-                <label for="password">Password</label>
-                <div class="input-row">
-                    <input id="password" name="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
-                    <button id="enter-button" type="submit">Enter</button>
-                </div>
-                <p id="error-message" class="error" aria-live="polite"></p>
-            </form>
-        </section>
-    </main>
-    <script src="/assets/js/gate.js"></script>
+  <header class="site-header" id="top">
+    <div class="nav-container">
+      <a class="brand" href="#top" aria-label="Site home">Your Name</a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+          <span class="theme-label">Dark</span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <!-- TODO: Add Blog link when ready. -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-content" data-reveal>
+        <p class="eyebrow">Software Engineer Portfolio</p>
+        <h1>Headline that signals seniority and confidence.</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View Featured Projects</a>
+          <a class="button ghost" href="#" aria-label="Download resume placeholder">Download Resume</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="mesh"></div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">Core Strengths</p>
+        <h2>Skills at a glance</h2>
+        <p class="section-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-group" data-reveal>
+          <h3>Languages</h3>
+          <ul class="pill-list">
+            <li class="pill">JavaScript</li>
+            <li class="pill">TypeScript</li>
+            <li class="pill">Python</li>
+            <li class="pill">Go</li>
+          </ul>
+        </article>
+        <article class="skill-group" data-reveal>
+          <h3>Frameworks</h3>
+          <ul class="pill-list">
+            <li class="pill">React</li>
+            <li class="pill">Node.js</li>
+            <li class="pill">Next.js</li>
+            <li class="pill">Express</li>
+          </ul>
+        </article>
+        <article class="skill-group" data-reveal>
+          <h3>Tools</h3>
+          <ul class="pill-list">
+            <li class="pill">Docker</li>
+            <li class="pill">Kubernetes</li>
+            <li class="pill">PostgreSQL</li>
+            <li class="pill">AWS</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">Selected Work</p>
+        <h2>Featured projects</h2>
+        <p class="section-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+      <div class="filter-bar" role="tablist" aria-label="Project filters">
+        <button class="filter-button active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-button" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+        <button class="filter-button" data-filter="fullstack" role="tab" aria-selected="false">Full Stack</button>
+        <button class="filter-button" data-filter="backend" role="tab" aria-selected="false">Backend</button>
+      </div>
+      <div class="project-grid">
+        <article class="project-card" data-category="frontend" data-reveal>
+          <div class="card-header">
+            <h3>Project One</h3>
+            <p class="outcome">Lorem ipsum result line that implies measurable impact.</p>
+          </div>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue.</p>
+          <ul class="pill-list">
+            <li class="pill">React</li>
+            <li class="pill">CSS</li>
+            <li class="pill">API</li>
+          </ul>
+          <a class="button primary" href="https://example.com/project-one" target="_blank" rel="noopener">View Project</a>
+        </article>
+        <article class="project-card" data-category="fullstack" data-reveal>
+          <div class="card-header">
+            <h3>Project Two</h3>
+            <p class="outcome">Placeholder outcome that communicates business value delivered.</p>
+          </div>
+          <p class="description">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod.</p>
+          <ul class="pill-list">
+            <li class="pill">Node</li>
+            <li class="pill">TypeScript</li>
+            <li class="pill">PostgreSQL</li>
+          </ul>
+          <a class="button primary" href="https://example.com/project-two" target="_blank" rel="noopener">View Project</a>
+        </article>
+        <article class="project-card" data-category="backend" data-reveal>
+          <div class="card-header">
+            <h3>Project Three</h3>
+            <p class="outcome">Impact-driven statement that hints at scale or reliability.</p>
+          </div>
+          <p class="description">Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.</p>
+          <ul class="pill-list">
+            <li class="pill">Go</li>
+            <li class="pill">gRPC</li>
+            <li class="pill">Cloud</li>
+          </ul>
+          <a class="button primary" href="https://example.com/project-three" target="_blank" rel="noopener">View Project</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">Background</p>
+        <h2>About the engineer</h2>
+        <p class="section-intro">Short narrative that pairs professionalism with personality.</p>
+      </div>
+      <div class="about-content" data-reveal>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
+        <p>Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus.</p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Contact</h2>
+        <p class="section-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reach out for collaborations or opportunities.</p>
+      </div>
+      <div class="contact-content" data-reveal>
+        <p class="email-obfuscated">Email: <span aria-label="email">hello [at] example [dot] com</span></p>
+        <button class="button ghost" id="email-button" type="button">Email me</button>
+        <div class="social-links">
+          <a href="https://github.com/placeholder" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/placeholder" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="footer-name">Your Name</span> · <span id="footer-year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
